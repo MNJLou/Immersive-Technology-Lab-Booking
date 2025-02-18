@@ -1,6 +1,7 @@
 import Dates from "@/components/Dates";
 import React, {useState, useEffect} from 'react';
 import { fetchUserFromSession } from "@/utils/bookingsHelper"
+import { useRouter } from "next/navigation";
 import { UserIcon } from "@heroicons/react/24/outline";
 import BookingTypeSwitch from "@/components/BookingTypeSwitch";
 import Header from "@/components/Header";
@@ -10,10 +11,16 @@ export default function BookingForm() {
     const [podPreference, setPodPreference] = useState(0);
     const [studentNumber, setStudentNumber] = useState("");
     const [loadingPage, setLoadingPage] = useState(true);
+
+    const router = useRouter();
     
     useEffect(() => {
         fetchUserFromSession().then((data) => {
-            setStudentNumber(data.studentNumber);
+            if (!data || !data.studentNumber) {
+              router.push("/login"); // Redirect to login if no session exists
+            } else {
+              setStudentNumber(data.studentNumber);
+            }
         });
     }, []);
     

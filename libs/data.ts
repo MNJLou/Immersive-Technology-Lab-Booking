@@ -42,6 +42,7 @@ export const disabledDates: string[] = [
     "2025-02-12",
     "2025-02-13",
     "2025-02-14",
+    "2025-02-19",
 ]
 
 /* Used to disable specific times on specific dates. */
