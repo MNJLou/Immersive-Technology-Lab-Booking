@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { loaderProps } from "../../libs/interfaces";
-import type {} from 'ldrs'
+import type { ring2 } from 'ldrs'
+
 
 export default function Loader({ size, color }: loaderProps) {
     useEffect(() => {
@@ -10,5 +11,9 @@ export default function Loader({ size, color }: loaderProps) {
         }
         getLoader()
     }, [])
-    return <l-ring-2 size={size} stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color={color}></l-ring-2>
+    return <div
+    dangerouslySetInnerHTML={{
+      __html: `<l-ring-2 size="${size}" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="${color}"></l-ring-2>`,
+    }}
+  />
 }
