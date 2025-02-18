@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export async function POST( request: NextRequest, 
   context: any ) {
   const { params } = context;
-  const studentNumber = params.username;
+  const studentNumber = params.studentNumber;
   await connectMongo();
   const user = await User.findOne({ studentNumber });
   console.log("STudent Number: " + user);
