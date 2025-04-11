@@ -50,6 +50,11 @@ export const disabledDates: string[] = [
     "2025-03-21",
     "2025-04-17",
     "2025-04-22",
+    "2025-05-01",
+    "2025-05-08",
+    "2025-05-15",
+    "2025-05-22",
+    "2025-05-29",
 ]
 
 /* Used to disable specific times on specific dates. */
