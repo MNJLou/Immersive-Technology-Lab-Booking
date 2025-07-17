@@ -19,7 +19,7 @@ const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 const CALENDAR_OPTIONS = {
   calendarId: process.env.CALENDAR_ID as string,
   calendar,
-  TIMEOFFSET: '+02:00',
+  TIMEOFFSET: '+00:00',
   TIMEZONE: 'Africa/Johannesburg',
   auth: new google.auth.JWT({
     email: CREDENTIALS.client_email,
