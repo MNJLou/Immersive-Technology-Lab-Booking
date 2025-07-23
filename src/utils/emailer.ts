@@ -81,9 +81,11 @@ const createIcs = ({event, student, devBooking}: emailIcsProps) => {
     scale: 'GREGORIAN',
     events: [
       {
-        start: moment(event.start).toDate(),
+        start: require('moment-timezone')(event.start).tz('Africa/Johannesburg').toDate(),
         status: ICalEventStatus.CONFIRMED,
-        end: (devBooking ? moment(event.start).add(55, 'minutes') : moment(event.start).add(25, 'minutes')).toDate(),
+        end: devBooking
+          ? require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(55, 'minutes').toDate()
+          : require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(25, 'minutes').toDate(),
         summary: 'Immersive Technology Lab Booking',
         transparency: ICalEventTransparency.OPAQUE,
         organizer: {
@@ -122,9 +124,11 @@ const deleteIcs = ({event, student, devBooking}: emailIcsProps) => {
     scale: 'GREGORIAN',
     events: [
       {
-        start: moment(event.start).toDate(),
+        start: require('moment-timezone')(event.start).tz('Africa/Johannesburg').toDate(),
         status: ICalEventStatus.CANCELLED,
-        end: (devBooking ? moment(event.start).add(55, 'minutes') : moment(event.start).add(25, 'minutes')).toDate(),
+        end: devBooking
+          ? require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(55, 'minutes').toDate()
+          : require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(25, 'minutes').toDate(),
         summary: 'Immersive Technology Lab Booking Cancellation',
         transparency: ICalEventTransparency.OPAQUE,
         organizer: {
