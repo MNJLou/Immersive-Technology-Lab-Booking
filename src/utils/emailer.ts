@@ -132,7 +132,7 @@ const deleteIcs = ({event, student, devBooking}: emailIcsProps) => {
           email: process.env.EMAIL_SENDER,
           mailto: process.env.EMAIL_SENDER
         },
-        description: `${(devBooking ? "Developmnent booking" : "Play Booking")} for ${student.name} (${student.studentNumber})`,
+        description: `${(devBooking ? "Development booking" : "Play Booking")} for ${student.name} (${student.studentNumber})`,
         location: 'Room 4-62, Level 4, Department of Information Science, IT Building, Hillcrest, Pretoria, 0083',
         attendees: [
           {
