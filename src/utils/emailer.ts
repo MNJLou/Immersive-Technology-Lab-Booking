@@ -1,7 +1,7 @@
 'use server';
 
 import {emailIcsProps, emailerProps, emailerCancelProps} from '../../libs/interfaces';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import ical, {
   ICalAttendeeRole,
   ICalAttendeeStatus,
