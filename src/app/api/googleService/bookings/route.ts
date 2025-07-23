@@ -13,7 +13,7 @@ const auth = new google.auth.JWT({
     scopes: SCOPES,
 });
 
-const TIMEOFFSET = '+00:00';
+const TIMEOFFSET = '+02:00';
 // gmt +2 timezone
 const TIMEZONE = 'Africa/Johannesburg';
 
