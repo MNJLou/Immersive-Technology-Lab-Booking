@@ -81,11 +81,11 @@ const createIcs = ({event, student, devBooking}: emailIcsProps) => {
     scale: 'GREGORIAN',
     events: [
       {
-        start: require('moment-timezone')(event.start).tz('Africa/Johannesburg').toDate(),
+        start: require('moment-timezone')(event.start).tz('Africa/Johannesburg'),
         status: ICalEventStatus.CONFIRMED,
         end: devBooking
-          ? require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(55, 'minutes').toDate()
-          : require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(25, 'minutes').toDate(),
+          ? require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(55, 'minutes')
+          : require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(25, 'minutes'),
         summary: 'Immersive Technology Lab Booking',
         transparency: ICalEventTransparency.OPAQUE,
         organizer: {
@@ -124,11 +124,11 @@ const deleteIcs = ({event, student, devBooking}: emailIcsProps) => {
     scale: 'GREGORIAN',
     events: [
       {
-        start: require('moment-timezone')(event.start).tz('Africa/Johannesburg').toDate(),
+        start: require('moment-timezone')(event.start).tz('Africa/Johannesburg'),
         status: ICalEventStatus.CANCELLED,
         end: devBooking
-          ? require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(55, 'minutes').toDate()
-          : require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(25, 'minutes').toDate(),
+          ? require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(55, 'minutes')
+          : require('moment-timezone')(event.start).tz('Africa/Johannesburg').add(25, 'minutes'),
         summary: 'Immersive Technology Lab Booking Cancellation',
         transparency: ICalEventTransparency.OPAQUE,
         organizer: {
