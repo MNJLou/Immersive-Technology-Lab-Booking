@@ -72,11 +72,11 @@ export async function POST(request: Request) {
         calendarId: CALENDAR_OPTIONS.calendarId,
         requestBody: {
           start: {
-            dateTime: new Date(`${date}T${startTime}${CALENDAR_OPTIONS.TIMEOFFSET}`).toISOString(),
+            dateTime: `${date}T${startTime}${CALENDAR_OPTIONS.TIMEOFFSET}`,
             timeZone: CALENDAR_OPTIONS.TIMEZONE,
           },
           end: {
-            dateTime: new Date(`${date}T${endTime}${CALENDAR_OPTIONS.TIMEOFFSET}`).toISOString(),
+            dateTime: `${date}T${endTime}${CALENDAR_OPTIONS.TIMEOFFSET}`,
             timeZone: CALENDAR_OPTIONS.TIMEZONE,
           },
           summary: `${bookingType} - ${user.studentNumber}`,
