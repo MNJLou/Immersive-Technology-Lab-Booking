@@ -122,7 +122,7 @@ export default function Dates( { devBooking, podPreference, setPodPreference, lo
     if(selectedBookings.includes(booking)) {
       setSelectedBookings(selectedBookings.filter((selectedBooking) => selectedBooking !== booking));
     } else {
-      if(booking.myBooking || selectedBookings.length < (devBooking ? MAX_DEV_BOOKINGS - (weekBookings[0].length ?? 0) : MAX_PLAY_BOOKINGS - (weekBookings[1].length ?? 0))) {
+      if(booking.myBooking || selectedBookings.length < (devBooking ? MAX_DEV_BOOKINGS - (weekBookings[0]?.length ?? 0) : MAX_PLAY_BOOKINGS - (weekBookings[1]?.length ?? 0))) {
         setSelectedBookings([...selectedBookings, booking]);
       }
     }
@@ -139,7 +139,7 @@ export default function Dates( { devBooking, podPreference, setPodPreference, lo
   return (
     <div className="booking-slots d-flex flex-column">
       {cancelBookingModal && <CancelBookingModal setRefresh={setRefresh} setIsOpen={setCancelBookingModal} bookingIds={selectedIds} />}
-      {createBookingModal && <CreateBookingModel setRefresh={setRefresh} setIsOpen={setCreateBookingModal} bookings={selectedBookings} podPreference={podPreference} devBooking={devBooking} selectedDate={selectedDate} leftBookings={devBooking ? MAX_DEV_BOOKINGS - (weekBookings[0].length ?? 0) : MAX_PLAY_BOOKINGS - (weekBookings[1].length ?? 0)} />}
+      {createBookingModal && <CreateBookingModel setRefresh={setRefresh} setIsOpen={setCreateBookingModal} bookings={selectedBookings} podPreference={podPreference} devBooking={devBooking} selectedDate={selectedDate} leftBookings={devBooking ? MAX_DEV_BOOKINGS - (weekBookings[0]?.length ?? 0) : MAX_PLAY_BOOKINGS - (weekBookings[1]?.length ?? 0)} />}
       <DatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} devBooking={devBooking} refresh={refresh} />
       <div className="slots-container flex justify-center bg-tertiary/60 shadow-none lg:shadow-sm mt-2 lg:mt-5">
         <div className="slots">
