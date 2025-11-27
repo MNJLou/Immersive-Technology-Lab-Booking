@@ -94,6 +94,7 @@ export const disabledDates: string[] = [
     "2025-11-13",
     "2025-11-20",
     "2025-11-27",
+    "2025-12-04",
 ]
 
 /* Used to disable specific times on specific dates. */
@@ -128,6 +129,7 @@ export const disabledDayTimes = {
     "2025-10-02": ["13:00", "13:30"],
     "2025-10-24": ["10:00", "10:30", "11:00", "11:30"],
     "2025-11-05": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30"],
+    "2025-12-03": ["13:00", "13:30"],
 } as { [key: string]: string[] };
 
 // === BOOKING CONSTANTS === //
